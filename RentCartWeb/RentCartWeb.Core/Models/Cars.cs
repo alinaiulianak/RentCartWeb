@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace RentCartWeb.Core.Models
 {
-   public class Cars
+   public class Cars: BaseEntity
     {
-        //from int in string, because is more easy to work with string
-        public string CarID { get; set; }
+       //public int CarID { get; set; }
        [StringLength(10)]
         public string Plate { get; set; }
         [StringLength(30)]
@@ -19,9 +18,9 @@ namespace RentCartWeb.Core.Models
         public string Model { get; set; }
         public decimal PricePerDay { get; set; }
 
-        public Cars()
-        {
-            this.CarID = Guid.NewGuid().ToString();
-        }
+        //public Cars()
+        //{
+        //    this.CarID = Guid.NewGuid().ToString();
+        //}
     }
 }

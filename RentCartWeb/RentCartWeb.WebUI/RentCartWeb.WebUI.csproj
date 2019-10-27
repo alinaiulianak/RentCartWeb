@@ -196,6 +196,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CarsManagerController.cs" />
     <Compile Include="Controllers\CustomerManageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -271,6 +272,8 @@
     <Content Include="Views\CustomerManage\Index.cshtml" />
     <Content Include="Views\CustomerManage\Create.cshtml" />
     <Content Include="Views\CustomerManage\Edit.cshtml" />
+    <Content Include="Views\CarsManager\Index.cshtml" />
+    <Content Include="Views\CarsManager\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

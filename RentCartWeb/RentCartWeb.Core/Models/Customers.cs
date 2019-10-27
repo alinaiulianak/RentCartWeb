@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace RentCartWeb.Core.Models
 {
-    public class Customers
+    public class Customers: BaseEntity
     {   
-        public int CostumerID { get; set; }
+        //public int CostumerID { get; set; }
         [StringLength(50)]
         [Required]
         public string Name { get; set; }

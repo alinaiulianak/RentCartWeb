@@ -33,7 +33,7 @@ namespace RentCartWeb.DataAccess.InMemory
         }
         public void Update(Customers customer)
         {
-            Customers customerToUpdate = customers.Find(p => p.CostumerID == customer.CostumerID);
+            Customers customerToUpdate = customers.Find(p => p.Id == customer.Id);
 
             if (customerToUpdate != null)
             {
@@ -45,9 +45,9 @@ namespace RentCartWeb.DataAccess.InMemory
             }
         }
 
-        public Customers Find(int CostumerID)
+        public Customers Find(int Id)
         {
-            Customers customer = customers.Find(p => p.CostumerID == CostumerID);
+            Customers customer = customers.Find(p => p.Id == Id);
 
             if (customer != null)
             {

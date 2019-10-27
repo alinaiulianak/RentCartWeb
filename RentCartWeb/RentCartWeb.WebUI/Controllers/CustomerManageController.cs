@@ -10,11 +10,11 @@ namespace RentCartWeb.WebUI.Controllers
 {
     public class CustomerManageController : Controller
     {
-        CustomersRepository context;
+        InMemoryRepository<Customers> context;
 
         public CustomerManageController()
         {
-            context = new CustomersRepository();
+            context = new InMemoryRepository<Customers>();
         }
         // GET: CustomerManage
         public ActionResult Index()
@@ -43,9 +43,9 @@ namespace RentCartWeb.WebUI.Controllers
             }
         }
 
-        public ActionResult Edit(int CostumerID)
+        public ActionResult Edit(int Id)
         {
-            Customers customer = context.Find(CostumerID);
+            Customers customer = context.Find(Id);
             if (customer == null)
             {
                 return HttpNotFound();
@@ -56,9 +56,9 @@ namespace RentCartWeb.WebUI.Controllers
             }
         }
         [HttpPost]
-        public ActionResult Edit(Customers customer, int CostumerID)
+        public ActionResult Edit(Customers customer, int Id)
         {
-            Customers customerToEdit = context.Find(CostumerID);
+            Customers customerToEdit = context.Find(Id);
             if (customerToEdit == null)
             {
                 return HttpNotFound();
