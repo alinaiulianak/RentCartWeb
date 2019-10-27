@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 namespace RentCartWeb.Core.Models
 {
     public class Customers
-    {   [Required]
-        public string CostumerID { get; set; }
+    {   
+        public int CostumerID { get; set; }
         [StringLength(50)]
         [Required]
         public string Name { get; set; }
@@ -20,9 +20,9 @@ namespace RentCartWeb.Core.Models
         [StringLength(50)]
         public string Location { get; set; }
 
-        public Customers()
-        {
-            this.CostumerID = Guid.NewGuid().ToString();
-        }
+        //public Customers()
+        //{
+        //    this.CostumerID = Guid.NewGuid().ToString();
+        //}
     }
 }

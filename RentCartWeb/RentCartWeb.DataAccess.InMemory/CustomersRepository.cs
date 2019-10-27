@@ -19,7 +19,7 @@ namespace RentCartWeb.DataAccess.InMemory
             customers = cache["customers"] as List<Customers>;
             if (customers == null)
             {
-                customers = new List<Customers>;
+                customers = new List<Customers>();
             }
         }
         public void Commit()
@@ -27,13 +27,13 @@ namespace RentCartWeb.DataAccess.InMemory
             cache["customers"] = customers;
         }
 
-        public void Insert(Customers c)
+        public void Insert(Customers p)
         {
-            customers.Add(c);
+            customers.Add(p);
         }
         public void Update(Customers customer)
         {
-            Customers customerToUpdate = customers.Find(c => c.CostumerID == customer.CostumerID);
+            Customers customerToUpdate = customers.Find(p => p.CostumerID == customer.CostumerID);
 
             if (customerToUpdate != null)
             {
@@ -45,9 +45,9 @@ namespace RentCartWeb.DataAccess.InMemory
             }
         }
 
-        public Customers Find(string Id)
+        public Customers Find(int CostumerID)
         {
-            Customers customer = customers.Find(c => c.CostumerID == Id);
+            Customers customer = customers.Find(p => p.CostumerID == CostumerID);
 
             if (customer != null)
             {

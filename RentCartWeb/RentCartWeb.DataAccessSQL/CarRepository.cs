@@ -18,7 +18,7 @@ namespace RentCartWeb.DataAccessSQL
             cars = cache["cars"] as List<Cars>;
             if (cars == null)
             {
-                cars = new List<Cars>;
+                cars = new List<Cars>();
             }
         }
         public void Commit()
