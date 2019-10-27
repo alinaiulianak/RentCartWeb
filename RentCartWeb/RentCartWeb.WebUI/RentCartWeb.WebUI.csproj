@@ -196,6 +196,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CustomerManagerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -270,6 +271,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\CustomerManager\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -278,6 +280,24 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RentCartWeb.Core\RentCartWeb.Core.csproj">
+      <Project>{62f77c3c-114c-418e-a5bf-628cc0ccd23a}</Project>
+      <Name>RentCartWeb.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RentCartWeb.DataAccess.InMemory\RentCartWeb.DataAccess.InMemory.csproj">
+      <Project>{1d67e819-2d9f-4f62-afe1-28d40644fe1e}</Project>
+      <Name>RentCartWeb.DataAccess.InMemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RentCartWeb.DataAccessSQL\RentCartWeb.DataAccess.SQL.csproj">
+      <Project>{81c9b28b-7db0-4adb-b2c8-aa539f32f37f}</Project>
+      <Name>RentCartWeb.DataAccess.SQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RentCartWeb.Services\RentCartWeb.Services.csproj">
+      <Project>{ce0e9bca-66b0-49b7-b3c5-c5e6707511ec}</Project>
+      <Name>RentCartWeb.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
