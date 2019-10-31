@@ -1,10 +1,15 @@
 ﻿@model IEnumerable<RentCartWeb.Core.Models.Customers>
+                      
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<script src="~/Scripts/jquery-1.12.4.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+<h2>Customers</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -19,14 +24,18 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.BirthDate)
+            @*@Html.JQueryUI().DatepickerFor(model => item.BirthDate)*@
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Location)
+            @Html.DisplayNameFor(model => model.ZIPCode)
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+
+
+@foreach (var item in Model)
+{
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Id)
@@ -36,19 +45,48 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.BirthDate)
+            @*@Html.JQueryUI().DatepickerFor(model => item.BirthDate)*@
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Location)
+            @Html.DisplayFor(modelItem => item.ZIPCode)
         </td>
         <td>
-            @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ })*@ 
+            @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ })*@
             @Html.ActionLink("Edit", "Edit", new { Id = item.Id })
-            @Html.ActionLink("Delete", "Delete", new { Id = item.Id }, new { onclick = "return confirm('Are you sure you wish to delete this article?');" })
+            @*@Html.ActionLink("Delete", "Delete", new { Id = item.Id }, new { onclick = "return confirm('Are you sure you wish to delete this article?');" })*@
 
-            
-          
+
+
         </td>
     </tr>
 }
 
 </table>
+@*<script type="text/javascript">
+    $(function () { // will trigger when the document is ready
+       $('.datepicker').datepicker(); //Initialise any date pickers
+    });
+</script>*@
+
+<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+
+@section scripts
+{
+
+    @*<script src="~/Scripts//jquery-ui-1.12.1.min.js"></script>
+<script src="~/Scripts/datepicker.js"></script>
+    <script>
+        $(function)(){
+            $(".datepicker").datepicker({
+                dateFormat :  'dd-MM-yyyy'
+            });
+         });
+    </script>*@
+    
+<script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script>
+        $(function () { // will trigger when the document is ready
+            $('.datepicker').datepicker({format: 'dd-MM-yyyy'}); //Initialise any date pickers
+        });
+    </script>
+}

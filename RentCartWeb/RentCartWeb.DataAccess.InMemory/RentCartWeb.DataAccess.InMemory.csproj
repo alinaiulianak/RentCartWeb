@@ -45,6 +45,7 @@
     <Compile Include="CustomersRepository.cs" />
     <Compile Include="InMemoryRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReservationRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RentCartWeb.Core\RentCartWeb.Core.csproj">

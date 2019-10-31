@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 
 namespace RentCartWeb.Core.Models
 {
-   public class Cars: BaseEntity
-    {
-       //public int CarID { get; set; }
-       [StringLength(10)]
+   public class Cars
+    {   
+        [Key]
+        [Required(ErrorMessage = "Enter A Valid CarId")]
+        public int CarID { get; set; }
+        [StringLength(10)]
         public string Plate { get; set; }
         [StringLength(30)]
         public string Manufacturer { get; set; }

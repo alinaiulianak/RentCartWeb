@@ -5,23 +5,30 @@ using System.Web;
 using System.Web.Mvc;
 using RentCartWeb.Core.Models;
 using RentCartWeb.DataAccess.InMemory;
+using RentCartWeb.Core.Contracts;
+using System.Configuration;
+using System.Data.SqlClient;
+using RentCartWeb.DataAccessSQL;
 
 namespace RentCartWeb.WebUI.Controllers
 {
     public class CustomerManageController : Controller
     {
-        InMemoryRepository<Customers> context;
+        IRepository<Customers> context;
 
-        public CustomerManageController()
+        public CustomerManageController(IRepository<Customers> customerContext)
         {
-            context = new InMemoryRepository<Customers>();
+            context = customerContext;
         }
         // GET: CustomerManage
-        public ActionResult Index()
+        public ActionResult Index(Customers c)
         {
-            List<Customers> customers = context.Collection().ToList();
-            return View(customers);
+      
+            List<Customers> customer = context.Collection().ToList();
+            return View(customer);
         }
+        
+    
         public ActionResult Create()
         {
             Customers customer = new Customers();
@@ -73,7 +80,7 @@ namespace RentCartWeb.WebUI.Controllers
 
                 customerToEdit.Name = customer.Name;
                 customerToEdit.BirthDate = customer.BirthDate;
-                customerToEdit.Location = customer.Location;
+                customerToEdit.ZIPCode = customer.ZIPCode;
 
                 context.Commit();
                 return RedirectToAction("Index");

@@ -11,6 +11,9 @@ namespace RentCartWeb.WebUI
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/jquery.ui").Include(
+                       "~/Scripts/datepicker.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
@@ -26,6 +29,19 @@ namespace RentCartWeb.WebUI
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+        //    bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
+        //"~/Content/themes/base/jquery.ui.core.css",
+        //"~/Content/themes/base/jquery.ui.datepicker.css",
+        //"~/Content/themes/base/jquery.ui.theme.css"));
+
+        //    bundles.Add(new ScriptBundle("~/bundles/datePicker").Include(
+        //  "~/Scripts/moment.min.js",
+        //  "~/Scripts/bootstrap-datetimepicker.min.js"));
+
+        //    bundles.Add(new StyleBundle("~/Content/datepicker").Include(
+        //             "~/Content/bootstrap-datetimepicker.min.css"));
+
         }
     }
 }

@@ -21,12 +21,12 @@ namespace RentCartWeb.Core.Models
             }
         }
 
-    public DateTimeOffset CreatedAt { get; set; }
+    //public DateTimeOffset CreatedAt { get; set; }
 
-        public BaseEntity()
-            {
+    //    public BaseEntity()
+    //        {
            
-            this.CreatedAt =DateTime.Now;
-            }
+    //        this.CreatedAt =DateTime.Now;
+    //        }
     }
 }

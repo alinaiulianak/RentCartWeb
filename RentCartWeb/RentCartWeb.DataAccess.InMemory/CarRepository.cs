@@ -8,7 +8,7 @@ using RentCartWeb.Core.Models;
 
 namespace RentCartWeb.DataAccess.InMemory
 {
-    public class CarRepository
+    public class CarRepository : ICarRepository
     {
         ObjectCache cache = MemoryCache.Default;
         List<Cars> cars;
@@ -26,10 +26,43 @@ namespace RentCartWeb.DataAccess.InMemory
             cache["cars"] = cars;
         }
 
+        public void Insert(Cars p)
+        {
+            cars.Add(p);
+        }
+        public void Update(Cars car)
+        {
+            Cars carToUpdate = cars.Find(p => p.CarID == car.CarID);
+
+            if (carToUpdate != null)
+            {
+                carToUpdate = car;
+            }
+            else
+            {
+                throw new Exception("Car not found!");
+            }
+        }
+
+        public Cars Find(int CarID)
+        {
+            Cars car = cars.Find(p => p.CarID == CarID);
+
+            if (car != null)
+            {
+                return car;
+            }
+            else
+            {
+                throw new Exception("Cars not found!");
+            }
+        }
+
         public IQueryable<Cars> Collection()
         {
             return cars.AsQueryable();
         }
+
 
 
     }

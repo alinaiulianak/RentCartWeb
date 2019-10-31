@@ -5,16 +5,17 @@ using System.Web;
 using System.Web.Mvc;
 using RentCartWeb.Core.Models;
 using RentCartWeb.DataAccess.InMemory;
+using RentCartWeb.Core.Contracts;
 
 namespace RentCartWeb.WebUI.Controllers
 {
     public class CarsManagerController : Controller
     {
-        InMemoryRepository<Cars> context;
+        ICarRepository context;
 
-        public CarsManagerController()
+        public CarsManagerController(ICarRepository context)
         {
-            context = new InMemoryRepository<Cars>();
+            this.context = context;
         }
         // GET: CustomerManage
         public ActionResult Index()
